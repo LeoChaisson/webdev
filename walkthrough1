@@ -1,0 +1,39 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns = "http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Our Web Page</title>
+
+   </head>
+   <body>
+      <h1>Wentworth Institute of Technology</h1>
+	  <h2>Department of Computer Science and Systems</h2>
+	  <h3>Our Faculty: </h3>
+	<table>
+    <tr>
+        <td>Karina Assiter</td>
+        <td><a href= "http://myweb.wit.edu/assiterk">Homepage</a>
+    </tr>
+    <tr>
+        <td>Magdy Ellabidy</td>
+        <td><a href= "http://www.ellabidy.com/">Homepage</a>
+    </tr>
+    <tr>
+        <td>Lisa Maclean</td>
+        <td><a href= "http://www.geocities.com/professormaclean">Homepage</a>
+    </tr>
+    <tr>
+        <td>Mike Werner</td>
+        <td><a href= "http://myweb.wit.edu/wernerm">Homepage</a>
+    </tr>
+    </table>
+
+
+      <p><em>Go to the</em>
+         <a  href = "http://www.wit.edu">
+            School</a>
+      </p>
+   </body>
+</html>
