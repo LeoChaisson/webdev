@@ -10,21 +10,52 @@ Comp 553-->
         <style type = "text/css">
             h1  {color:blue;
                 font-size: 120pt}
-            div {color:white;
+            #Bluebox 
+                {color:white;
                 font-size:32pt;
                 background-color:blue;
                 height:125px;
                 width:250px}
-            table{border: 1px solid black}
-            #Special{text-decoration: underline}
-            .row1{font-weight: bold}
-            .row2{font-style: italic}
+            table
+                {border: 1px solid black}
+            #DropdownMenu
+                {list-style: none;
+                display: block;
+                position:relative;
+                float:left;
+                background-color: red}
+            
+            #DropdownMenu li
+                {position::relative;
+                float:left;
+                padding:15px;}
+            #DropdownMenu li ul
+                {display:none}
+            #DropdownMenu li:hover ul
+                {display:block}
+            #DropdownMenu ul
+                {position:absolute;
+                top: 100%;
+                width:100px;
+                list-style: none}
+            #DropdownMenu li ul li
+                {float:none;
+                position:relative;
+                padding: 0;
+                background-color: green}
+            #DropdownMenu:After {content:"";clear:both;display: block;}
+            #Special
+                {text-decoration: underline}
+            .row1
+                {font-weight: bold}
+            .row2
+                {font-style: italic}
         </style>
     </head>
 
     <body>
         <h1>Hello!!</h1>
-        <div>blue box</div>
+        <div id=Bluebox>blue box</div>
         <table>
             <tr class=row1>
                 <td>Top Left</td>
@@ -34,5 +65,28 @@ Comp 553-->
                 <td>Bottem Left</td>
                 <td id=Special>I am special</td>
         </table>
+        <ul id=DropdownMenu>
+            <li>Item one
+                <ul>
+                    <li>subitem one</li>
+                    <li>subitem two</li>
+                    <li>subitem three</li>
+                </ul>
+            </li>
+            <li>Item two
+                <ul>
+                    <li>subitem 2.1</li>
+                </ul>
+            </li>
+            <li>Item three(no subitem)</li>
+            <li>Item four
+                <ul>
+                    <li>uno</li>
+                    <li>dos</li>
+                    <li>tres</li>
+                    <li>cuatro</li>
+                </ul>
+            </li>
+        </div>
     </body>
 </html>
