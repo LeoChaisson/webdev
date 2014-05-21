@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//SQ//DTD HTML 2.0 HoTMetaL + extensions//EN">
+<HTML>
+<HEAD>
+<TITLE>Courses Radio Button Project</TITLE>
+
+<SCRIPT Language="JavaScript">
+<!--
+function checkButtons(form){
+    var msg="You can't choose the same course twice"
+    for (var i = 0; i < form.Choice1.length; i++){
+      if (form.Choice1[i].checked=form.Choice2[i].checked||form.Choice3[i].checked=form.Choice2[i].checked){
+         alert(msg)
+         break
+}
+
+
+//-->
+</SCRIPT>
+
+</HEAD>
+<BODY BGCOLOR="#efefef">
+<H2>Please choose three courses in order of preference:</H2>
+<H3>(You must choose different courses for your first second and third choice.)</H3>
+
+<FORM Name = "Courses">
+
+<TABLE>
+<TR>
+<TD ALIGN="RIGHT" COLSTART="1"><B>Course</B></TD>
+<TD ALIGN="CENTER" COLSTART="2"><B>First Choice</B></TD>
+<TD ALIGN="CENTER" COLSTART="3"><B>Second Choice</B></TD>
+<TD ALIGN="CENTER" COLSTART="4"><B>Third Choice</B></TD>
+</TR>
+<TR>
+<TD ALIGN="RIGHT" COLSTART="1">English</TD>
+<TD ALIGN="CENTER" COLSTART="2"><INPUT
+TYPE="RADIO" NAME="Choice1" VALUE="eng" CHECKED="CHECKED"></TD>
+<TD ALIGN="CENTER" COLSTART="3"><INPUT
+TYPE="RADIO" NAME="Choice2" VALUE="eng" ></TD>
+<TD ALIGN="CENTER" COLSTART="4"><INPUT
+TYPE="RADIO" NAME="Choice3" VALUE="eng" ></TD>
+</TR>
+<TR><TD ALIGN="RIGHT" COLSTART="1">French</TD>
+<TD ALIGN="CENTER" COLSTART="2"><INPUT TYPE="RADIO" NAME="Choice1" VALUE="fre"></TD>
+<TD ALIGN="CENTER" COLSTART="3"><INPUT TYPE="RADIO" NAME="Choice2" VALUE="fre" CHECKED="CHECKED"></TD>
+<TD ALIGN="CENTER" COLSTART="4"><INPUT TYPE="RADIO" NAME="Choice3" VALUE="fre"></TD>
+</TR>
+<TR>
+<TD ALIGN="RIGHT" COLSTART="1">Spanish</TD>
+<TD ALIGN="CENTER" COLSTART="2"><INPUT TYPE="RADIO" NAME="Choice1" VALUE="spa"></TD>
+<TD ALIGN="CENTER" COLSTART="3"><INPUT TYPE="RADIO" NAME="Choice2" VALUE="spa"></TD>
+<TD ALIGN="CENTER" COLSTART="4"><INPUT TYPE="RADIO" NAME="Choice3" VALUE="spa" CHECKED="CHECKED"></TD>
+</TR>
+<TR>
+<TD ALIGN="RIGHT" COLSTART="1">Math</TD>
+<TD ALIGN="CENTER" COLSTART="2"><INPUT TYPE="RADIO" NAME="Choice1" VALUE="mat"></TD>
+<TD ALIGN="CENTER" COLSTART="3"><INPUT TYPE="RADIO" NAME="Choice2" VALUE="mat"></TD>
+<TD ALIGN="CENTER" COLSTART="4"><INPUT TYPE="RADIO" NAME="Choice3" VALUE="mat"></TD>
+</TR>
+<TR>
+<TD ALIGN="RIGHT" COLSTART="1">Science</TD>
+<TD ALIGN="CENTER" COLSTART="2"><INPUT TYPE="RADIO" NAME="Choice1" VALUE="sci"></TD>
+<TD ALIGN="CENTER" COLSTART="3"><INPUT TYPE="RADIO" NAME="Choice2" VALUE="sci"></TD>
+<TD ALIGN="CENTER" COLSTART="4"><INPUT TYPE="RADIO" NAME="Choice3" VALUE="sci"></TD>
+</TR>
+
+</TABLE>
+<P><INPUT TYPE="SUBMIT" VALUE="Register" SIZE="20" onclick="checkButtons(this.form)">
+<INPUT TYPE="RESET" VALUE="Reset" SIZE="20"></P></FORM>
+</BODY></HTML>
