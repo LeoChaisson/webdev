@@ -109,9 +109,12 @@ Comp 553-->
                     }
                 });
                 $("#equals").click(function(){
+                   
                     equation = newnumber + operator + number;
+                     alert(equation);
                     answer = eval(equation);
-                    totaldiv.text=(answer);
+                    alert(answer);
+                    totaldiv.text(answer);
                 });
             });
         </script>
