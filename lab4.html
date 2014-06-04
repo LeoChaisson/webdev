@@ -4,64 +4,93 @@
     <head>
         <title>Frank's Fish Store (Lab 4)</title>
         <style type="text/css">
-            h1      {color:blue;}
+            html    {font-family:arial,roboto,proxima nova,gotham;}
+            h1      {font-size:36pt;
+                    color:blue;}
             p       {color:green;
                     font-size:20pt;}
             table,td,tr   
-                    {border: 2px solid orange}
-            input   {width:40px}
+                    {border: 2px solid #FF7519;
+                    padding:0 2px;}
+            input   {width:40px;}
+            button  {background-color:#33CCFF;
+                    width:45px;}
         </style>
+        <script src=src="jquery-1.11.1.min.js"></script>
         <script>
-            
+            var fish = "";
+            var price = 0;
+            var amount = 0;
+            $(#add).click(function){
+                fish = $("#fish")$(this).text();
+                price = $("#price")$(this).text();
+                amount = $("#amount")$(this.text();
+                function addToCart(fish,price,amount){
+                    var cart = document.getElementById("cart");
+                    var row = cart.insertRow(0);
+                    var col1 = row.insertCell(0);
+                    var col2 = row.insertCell(1);
+                    var col3 = row.insertCell(2);
+                    var col4 = row.insertCell(3);
+                    col1.innerHTML = fish;
+                    col2.innerHTML = "$" price;
+                    col3.innerHTML = "Quantity: " + amount;
+                    col4.innerHTML = "Cost: $" + price * amount;
+                }
+            }
         </script>
     </head>
+    
     <body>
         <h1>Frank's Fish Store</h1>
         <p>Pet Fish:</p>
         <table>
             <tr>
-                <td>Guppy</td>
-                <td>$1.99</td>
-                <td>Quantity: <input type=text></input></td>
-                <td><button>Add</button></td>
+                <td id=fish>Guppy</td>
+                <td id=price>$1.99</td>
+                <td id=amount>Quantity: <input type=text></input></td>
+                <td><button id=add type=button>Add</button></td>
             </tr>
             <tr>
-                <td>Mollie</td>
-                <td>$2.99</td>
-                <td>Quantity: <input type=text></input></td>
-                <td><button>Add</button></td>
+                <td id=fish>Mollie</td>
+                <td id=price>$2.99</td>
+                <td id=amount>Quantity: <input type=text></input></td>
+                <td><button id=add type=button>Add</button></td>
             </tr>
             <tr>
-                <td>Angel Fish</td>
-                <td>$15.00</td>
-                <td>Quantity: <input type=text></input></td>
-                <td><button>Add</button></td>
+                <td id=fish>Angel Fish</td>
+                <td id=price>$15.00</td>
+                <td id=amount>Quantity: <input type=text></input></td>
+                <td><button id=add type=button>Add</button></td>
             </tr>
             <tr>
-                <td>Goldfish</td>
-                <td>$0.99</td>
-                <td>Quantity: <input type=text></input></td>
-                <td><button>Add</button></td>
+                <td id=fish>Goldfish</td>
+                <td id=price>$0.99</td>
+                <td id=amount>Quantity: <input type=text></input></td>
+                <td><button id=add type=button>Add</button></td>
             </tr>
             <tr>
-                <td>Piranha</td>
-                <td>$27.99</td>
-                <td>Quantity: <input type=text></input></td>
-                <td><button>Add</button></td>
+                <td id=fish>Piranha</td>
+                <td id=price>$27.99</td>
+                <td id=amount>Quantity: <input type=text></input></td>
+                <td><button id=add type=button>Add</button></td>
             </tr>
             <tr>
-                <td>Spiny Eel</td>
-                <td>$14.99</td>
-                <td>Quantity: <input type=text></input></td>
-                <td><button>Add</button></td>
+                <td id=fish>Spiny Eel</td>
+                <td id=price>$14.99</td>
+                <td id=amount>Quantity: <input type=text></input></td>
+                <td><button id=add type=button>Add</button></td>
             </tr>
             <tr>
-                <td>Clown Loach</td>
-                <td>$9.99</td>
-                <td>Quantity: <input type=text></input></td>
-                <td><button>Add</button></td>
+                <td id=fish>Clown Loach</td>
+                <td id=price>$9.99</td>
+                <td id=amount>Quantity: <input type=text></input></td>
+                <td><button id=add type=button>Add</button></td>
             </tr>
         </table>
         <p>Your Shopping Cart:</p>
+        <table id=cart>
+            <tr><td>Your cart is empty... the fish are lonely :c</td></tr>
+        </table>
     </body>
 </html>
