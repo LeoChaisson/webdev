@@ -1,5 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <title>Frank's Fish Store (Lab 4)</title>
@@ -16,28 +14,34 @@
             button  {background-color:#33CCFF;
                     width:45px;}
         </style>
-        <script src=src="jquery-1.11.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
         <script>
             var fish = "";
             var price = 0;
             var amount = 0;
-            $(#add).click(function){
-                fish = $("#fish")$(this).text();
-                price = $("#price")$(this).text();
-                amount = $("#amount")$(this.text();
-                function addToCart(fish,price,amount){
-                    var cart = document.getElementById("cart");
-                    var row = cart.insertRow(0);
-                    var col1 = row.insertCell(0);
-                    var col2 = row.insertCell(1);
-                    var col3 = row.insertCell(2);
-                    var col4 = row.insertCell(3);
-                    col1.innerHTML = fish;
-                    col2.innerHTML = "$" price;
-                    col3.innerHTML = "Quantity: " + amount;
-                    col4.innerHTML = "Cost: $" + price * amount;
-                }
-            }
+            $(document).ready(function(){
+                $("button").click(function(){
+                    alert(fish + price + amount);
+                   // fish = $(".fish")$(this).text();
+                  //  price = $(".price")$(this).val();
+                  //  amount = $(".amount")$(this).val();
+                    addToCart(fish,price,amount);
+                    function addToCart(fish,price,amount){
+                        var cart = document.getElementById("cart");
+                        {
+                        var row = cart.insertRow(0);
+                        var col1 = row.insertCell(0);
+                        var col2 = row.insertCell(1);
+                        var col3 = row.insertCell(2);
+                        var col4 = row.insertCell(3);
+                        col1.innerHTML = fish;
+                        col2.innerHTML = "$" + price;
+                        col3.innerHTML = "Quantity: " + amount;
+                        col4.innerHTML = "Cost: $" + (price * amount);
+                        }
+                    };
+                });
+            });
         </script>
     </head>
     
@@ -46,46 +50,46 @@
         <p>Pet Fish:</p>
         <table>
             <tr>
-                <td id=fish>Guppy</td>
-                <td id=price>$1.99</td>
-                <td id=amount>Quantity: <input type=text></input></td>
-                <td><button id=add type=button>Add</button></td>
+                <td class=fish>Guppy</td>
+                <td class=price>$1.99</td>
+                <td class=amount>Quantity: <input type="text"></input></td>
+                <td><button type="button">Add</button></td>
             </tr>
             <tr>
-                <td id=fish>Mollie</td>
-                <td id=price>$2.99</td>
-                <td id=amount>Quantity: <input type=text></input></td>
-                <td><button id=add type=button>Add</button></td>
+                <td class=fish>Mollie</td>
+                <td class=price>$2.99</td>
+                <td class=amount>Quantity: <input type="text"></input></td>
+                <td><button type="button">Add</button></td>
             </tr>
             <tr>
-                <td id=fish>Angel Fish</td>
-                <td id=price>$15.00</td>
-                <td id=amount>Quantity: <input type=text></input></td>
-                <td><button id=add type=button>Add</button></td>
+                <td class=fish>Angel Fish</td>
+                <td class=price>$15.00</td>
+                <td class=amount>Quantity: <input type="text"></input></td>
+                <td><button type="button">Add</button></td>
             </tr>
             <tr>
-                <td id=fish>Goldfish</td>
-                <td id=price>$0.99</td>
-                <td id=amount>Quantity: <input type=text></input></td>
-                <td><button id=add type=button>Add</button></td>
+                <td class=fish>Goldfish</td>
+                <td class=price>$0.99</td>
+                <td class=amount>Quantity: <input type="text"></input></td>
+                <td><button type="button">Add</button></td>
             </tr>
             <tr>
-                <td id=fish>Piranha</td>
-                <td id=price>$27.99</td>
-                <td id=amount>Quantity: <input type=text></input></td>
-                <td><button id=add type=button>Add</button></td>
+                <td class=fish>Piranha</td>
+                <td class=price>$27.99</td>
+                <td class=amount>Quantity: <input type="text"></input></td>
+                <td><button type="button">Add</button></td>
             </tr>
             <tr>
-                <td id=fish>Spiny Eel</td>
-                <td id=price>$14.99</td>
-                <td id=amount>Quantity: <input type=text></input></td>
-                <td><button id=add type=button>Add</button></td>
+                <td class=fish>Spiny Eel</td>
+                <td class=price>$14.99</td>
+                <td class=amount>Quantity: <input type="text"></input></td>
+                <td><button type="button">Add</button></td>
             </tr>
             <tr>
-                <td id=fish>Clown Loach</td>
-                <td id=price>$9.99</td>
-                <td id=amount>Quantity: <input type=text></input></td>
-                <td><button id=add type=button>Add</button></td>
+                <td class=fish>Clown Loach</td>
+                <td class=price>$9.99</td>
+                <td class=amount>Quantity: <input type="text"></input></td>
+                <td><button type="button">Add</button></td>
             </tr>
         </table>
         <p>Your Shopping Cart:</p>
