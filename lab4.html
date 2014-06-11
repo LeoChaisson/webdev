@@ -16,16 +16,60 @@
         </style>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
         <script>
+            var fishB= "";
             var fish = "";
             var price = 0;
             var amount = 0;
+            var total = 0;
+            var fixedTotal = 0;
+            var numberOfFish = 0;
             $(document).ready(function(){
                 $("button").click(function(){
-                    alert(fish + price + amount);
-                   // fish = $(".fish")$(this).text();
-                  //  price = $(".price")$(this).val();
-                  //  amount = $(".amount")$(this).val();
+                    fishB= $(this).attr("name");
+                    switch(fishB){
+                        case "gupB":
+                            fish = "Guppy";
+                            price = 1.99;
+                            amount = $('[name= gupI]').val();
+                            break;
+                            
+                        case "molB":
+                            fish = "Mollie";
+                            price = 2.99;
+                            amount = $('[name= molI]').val();
+                            break;
+                            
+                        case "angB":
+                            fish = "Angel Fish";
+                            price = 15.00;
+                            amount = $('[name= angI]').val();
+                            break;
+                            
+                        case "golB":
+                            fish = "Goldfish";
+                            price = 0.99;
+                            amount = $('[name= golI]').val();
+                            break;
+                        case "pirB":
+                            fish = "Piranha";
+                            price = 27.99;
+                            amount = $('[name= pirI]').val();
+                            break;
+                            
+                        case "eelB":
+                            fish = "Spiney Eel";
+                            price = 14.99;
+                            amount = $('[name= eelI]').val();
+                            break;
+                            
+                        case "cloB":
+                            fish = "Clown Loach";
+                            price = 9.99;
+                            amount = $('[name= cloI]').val();
+                            break;
+                    }
                     addToCart(fish,price,amount);
+                    document.getElementById("empty").style.visibility="hidden";
                     function addToCart(fish,price,amount){
                         var cart = document.getElementById("cart");
                         {
@@ -34,10 +78,21 @@
                         var col2 = row.insertCell(1);
                         var col3 = row.insertCell(2);
                         var col4 = row.insertCell(3);
+                        var col5 = row.insertCell(4);
                         col1.innerHTML = fish;
-                        col2.innerHTML = "$" + price;
+                        col2.innerHTML = "Individual price $" + price;
                         col3.innerHTML = "Quantity: " + amount;
-                        col4.innerHTML = "Cost: $" + (price * amount);
+                        col4.innerHTML = "SubTotal Cost: $" + (price * amount);
+                        total = total + (price * amount);
+                        fixedTotal = total.toFixed(2);
+                        numberOfFish = numberOfFish + amount;
+                            //if(numberOfFish >= 10){
+                            //    total = total * .9;
+                            //    col5.innerHTML = "Total Cost WITH 10% DISCOUNT: $" + total;
+                            //}
+                           // else{
+                                col5.innerHTML = "Total Cost: $" + fixedTotal;
+                           //}
                         }
                     };
                 });
@@ -46,55 +101,55 @@
     </head>
     
     <body>
-        <h1>Frank's Fish Store</h1>
+        <h1>Leo's Fish Store</h1>
         <p>Pet Fish:</p>
         <table>
             <tr>
-                <td class=fish>Guppy</td>
-                <td class=price>$1.99</td>
-                <td class=amount>Quantity: <input type="text"></input></td>
-                <td><button type="button">Add</button></td>
+                <td>Guppy</td>
+                <td>$1.99</td>
+                <td>Quantity: <input type="text" name="gupI"></input></td>
+                <td><button type="button" name="gupB">Add</button></td>
             </tr>
             <tr>
-                <td class=fish>Mollie</td>
-                <td class=price>$2.99</td>
-                <td class=amount>Quantity: <input type="text"></input></td>
-                <td><button type="button">Add</button></td>
+                <td>Mollie</td>
+                <td>$2.99</td>
+                <td>Quantity: <input type="text" name="molI"></input></td>
+                <td><button type="button" name="molB">Add</button></td>
             </tr>
             <tr>
-                <td class=fish>Angel Fish</td>
-                <td class=price>$15.00</td>
-                <td class=amount>Quantity: <input type="text"></input></td>
-                <td><button type="button">Add</button></td>
+                <td>Angel Fish</td>
+                <td>$15.00</td>
+                <td>Quantity: <input type="text" name="angI"></input></td>
+                <td><button type="button" name="angB">Add</button></td>
             </tr>
             <tr>
-                <td class=fish>Goldfish</td>
-                <td class=price>$0.99</td>
-                <td class=amount>Quantity: <input type="text"></input></td>
-                <td><button type="button">Add</button></td>
+                <td>Goldfish</td>
+                <td>$0.99</td>
+                <td>Quantity: <input type="text" name="golI"></input></td>
+                <td><button type="button" name="golB">Add</button></td>
             </tr>
             <tr>
-                <td class=fish>Piranha</td>
-                <td class=price>$27.99</td>
-                <td class=amount>Quantity: <input type="text"></input></td>
-                <td><button type="button">Add</button></td>
+                <td>Piranha</td>
+                <td>$27.99</td>
+                <td>Quantity: <input type="text" name="pirI"></input></td>
+                <td><button type="button" name="pirB">Add</button></td>
             </tr>
             <tr>
-                <td class=fish>Spiny Eel</td>
-                <td class=price>$14.99</td>
-                <td class=amount>Quantity: <input type="text"></input></td>
-                <td><button type="button">Add</button></td>
+                <td>Spiny Eel</td>
+                <td>$14.99</td>
+                <td>Quantity: <input type="text" name="eelI"></input></td>
+                <td><button type="button" name="eelB">Add</button></td>
             </tr>
             <tr>
-                <td class=fish>Clown Loach</td>
-                <td class=price>$9.99</td>
-                <td class=amount>Quantity: <input type="text"></input></td>
-                <td><button type="button">Add</button></td>
+                <td>Clown Loach</td>
+                <td>$9.99</td>
+                <td>Quantity: <input type="text" name="cloI"></input></td>
+                <td><button type="button" name="cloB">Add</button></td>
             </tr>
         </table>
         <p>Your Shopping Cart:</p>
         <table id=cart>
-            <tr><td>Your cart is empty... the fish are lonely :c</td></tr>
+            <tr><td id=empty>Your cart is empty... the fish are lonely :c</td></tr>
         </table>
     </body>
 </html>
