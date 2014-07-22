@@ -31,15 +31,15 @@
                         if (xmlhttp.readyState==4 && xmlhttp.status==200)
                             {
                                  txt="<table border='1'><tr><th>Name</th><th>Description</th><th>Price</th><th>Calories</th></tr>";
-                                 x=xmlhttp.responseXML.documentElement.getElementsByTagName(menu);
+                                 x=xmlhttp.responseXML.documentElement.getElementsByTagName(menu)[0];
                                  for (i=0;i<x.length;i++)
                                     {
                                          txt=txt + "<tr>";
                                          txt=txt + displayTableCell("name",x[i]);
-                                         txt = txt + displayTableCell("description",x[i]);
-                                         txt = txt + displayTableCell("price",x[i]);
-                                         txt = txt + displayTableCell("calories",x[i]);
-                                          txt=txt + "</tr>";
+                                         txt=txt + displayTableCell("description",x[i]);
+                                         txt=txt + displayTableCell("price",x[i]);
+                                         txt=txt + displayTableCell("calories",x[i]);
+                                         txt=txt + "</tr>";
                                     }
                             txt=txt + "</table>";
                             document.getElementById('txtMenuInfo').innerHTML=txt;
@@ -70,11 +70,11 @@
     
     <body>
         <div id=txtMenuInfo>
-            <input type="radio" name="meal" value="full menu" onclick="loadXMLDoc('foodmenu.xml','food')">Full Menu<br>
+        </div>
+        <input type="radio" name="meal" value="full menu" onclick="loadXMLDoc('foodmenu.xml','food')">Full Menu<br>git
             <input type="radio" name="meal" value="breakfast" onclick="loadXMLDoc('foodmenu.xml','breakfast_menu')">breakfast<br>
             <input type="radio" name="meal" value="lunch" onclick="loadXMLDoc('foodmenu.xml','lunch_menu')">lunch<br>
             <input type="radio" name="meal" value="dinner" onclick="loadXMLDoc('foodmenu.xml','dinner_menu')">dinner
-        </div>
     </body>
     
 </html>
